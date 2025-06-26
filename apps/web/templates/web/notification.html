@@ -1,0 +1,21 @@
+{% extends 'web/base.html' %}
+{% load static %}
+
+{% block title %}
+Notifications
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h2>Notifications</h2>
+    {% if notifications %}
+        <ul>
+            {% for notification in notifications %}
+                <li>{{ notification.message }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No notifications found.</p>
+    {% endif %}
+</div>
+{% endblock %}
